@@ -1,0 +1,19 @@
+<form method="POST" action="/passwordreset">
+
+    <%= "Please Enter Your OTP" %>
+
+        <input required name="userId" value="<%=userId%>" style="display:none">
+
+        <input required name="otp" placeholder="Enter Your OTP">
+
+        <%= "Create New Password" %>
+
+            <input required name="password" type="password" assword placeholder="Enter Your Password">
+
+            <input type="submit" value="Reset">
+
+            <% if(errorMsg) {%>
+                <script>
+                    alert("<%= errorMsg %>");
+                </script>
+                <% } %>

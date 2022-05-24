@@ -1,0 +1,38 @@
+<%- include("partials/header", { user: user }) %>
+
+
+    <h1> Products </h1>
+
+    <% for(var i=0; i<5+count && i<products.length; i++){%>
+
+        <div>
+            <img src="<%=products[i].filename%>" width="250" height="250">
+
+            <h2>
+                <%=products[i].name%>
+            </h2>
+            <h2>
+                <%=products[i].price%>
+            </h2>
+
+            <button class="addtocart" id="<%=products[i].id%>">Add to Cart</button>
+
+            <form method="post" action="/showdetails" target="_blank">
+
+                <input name="id" value="<%=products[i].id%>" style="display:none" />
+                <input type="submit" value="View Description" />
+
+            </form>
+
+
+            <%}%>
+
+        </div>
+        <form method="post" action="/loadmore">
+
+            <input name="count" value="<%=i%>" style="display:none" />
+            <input type="submit" value="Load More Products" />
+
+        </form>
+
+        <script src="/scripts/addtocart.js"></script>

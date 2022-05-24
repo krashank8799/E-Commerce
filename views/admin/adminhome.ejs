@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+    <title>
+
+    </title>
+
+</head>
+
+<body>
+    <h1> Hello
+        <%=user%>
+    </h1>
+    <form method="get" action="/logout">
+        <input type="submit" value="logout" />
+    </form>
+    <h3> ADD A NEW PRODUCT</h3>
+    <form method="POST" action="/admin/addproduct" enctype="multipart/form-data">
+        <label>Product Name: <input type="text" name="productname" placeholder="Name" required/></label>
+        <label>Product Description: <input type="text" name="productdescription" placeholder="Description" required/></label>
+        <label>Product Price: <input type="text" name="productprice" placeholder="Price" required/></label>
+        <label>Product Quantity: <input type="text" name="productstock" placeholder="Quantity" required/></label>
+        <label>Product Img: <input type="file" name="productimage" required/></label>
+        <input type="submit" value="Add Product" />
+    </form>
+
+    <div id="showproducts">
+
+
+    </div>
+
+
+</body>
+
+<script src="/scripts/admin_home.js"></script>
+
+</html>

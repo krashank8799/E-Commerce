@@ -1,0 +1,41 @@
+<div id="header">
+
+    <% if(user) {%>
+        <h1>
+            <%= user.username %>
+        </h1>
+        <img src="<%= user.pic %>" / height="200" width="200">
+
+        <form method="get" action="/logout">
+            <input type="submit" value="Logout">
+        </form>
+
+        <div id="account">
+            <form method="get" action="/account">
+                <input type="submit" value="Account">
+            </form>
+        </div>
+        <div id="myart">
+            <form method="get" action="/mycart">
+                <input type="submit" value="My Cart">
+            </form>
+        </div>
+</div>
+<% }else { %>
+    <a href="/home">Login</a>
+    <% } %>
+
+        <style>
+            #header {
+                text-align: center;
+                background: skyblue;
+            }
+            
+            h1 {
+                color: red;
+            }
+            
+            #account {
+                text-align: right;
+            }
+        </style>
