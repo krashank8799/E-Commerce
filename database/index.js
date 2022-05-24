@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-const url = "mongodb+srv://Krashank:k12345678@cluster0.7moxc.mongodb.net/E-Commerce?retryWrites=true&w=majority"
+const url = "YOUR MONGODB URL"
 
 module.exports.start = function() {
     mongoose.connect(url).then(function() {
